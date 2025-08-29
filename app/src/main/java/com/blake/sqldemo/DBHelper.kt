@@ -36,7 +36,11 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
     // This method is to add a User record in DB
     fun addUser(name: String, age: String) {
+        // Null Check
         if (name ==  "" || age == "") { return }
+        //Checking if age is a number value
+        try { age.toInt() }
+        catch (e: NumberFormatException) { return }
         // This ContentValues class is used to store a set of values
         val values = ContentValues()
         // insert key-value pairs

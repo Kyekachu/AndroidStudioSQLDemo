@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.text.isDigitsOnly
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -40,7 +41,12 @@ class MainActivity : AppCompatActivity() {
                     //null check message
                     if (name == "" || age == "")
                     {
-                        Toast.makeText(this, "username or age cannot be blank here", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Username or Age cannot be blank here", Toast.LENGTH_SHORT).show()
+                    }
+
+                    else if (!age.isDigitsOnly())
+                    {
+                        Toast.makeText(this, "Age must be a number", Toast.LENGTH_SHORT).show()
                     }
 
                     else
