@@ -46,9 +46,6 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         // insert key-value pairs
         values.put(NAME, name.trimEnd())
         values.put(AGE, age.trimEnd())
-        if(name == ""|| age == ""){
-            return
-        }
         // create a writable DB variable of our database to insert record
         val db = this.writableDatabase
         // insert all values into DB
