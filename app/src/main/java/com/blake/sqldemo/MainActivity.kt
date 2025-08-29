@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(this, "Username or Age cannot be blank here", Toast.LENGTH_SHORT).show()
                     }
 
+
                     else if (!age.isDigitsOnly())
                     {
                         Toast.makeText(this, "Age must be a number", Toast.LENGTH_SHORT).show()
@@ -57,9 +58,6 @@ class MainActivity : AppCompatActivity() {
                         db.addUser(name, age)
                         Toast.makeText(this, "$name added to database", Toast.LENGTH_SHORT).show()
                     }
-                    db.addUser(name, age)
-                    Toast.makeText(this, "$name added to database", Toast.LENGTH_SHORT).show()
-
                 }
             )
             dialogBuilder.setNegativeButton("No",
